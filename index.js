@@ -1,7 +1,10 @@
 'use strict';
 
 const express = require('express');
+const logger = require('morgan');
 const app = express();
+
+app.use(logger('common'));
 
 app.get('*', (req, res, next) => {
   const url = `https://${req.headers.host}${req.url}`;
