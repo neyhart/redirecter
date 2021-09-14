@@ -10,7 +10,7 @@ app.get('*', (req, res, next) => {
   res.redirect(301, url);
 });
 
-const port = '4001';
+const port = process.env.PORT || 4001;
 app.listen(port, '0.0.0.0', () => {
   console.log('Express server is listening on port', port);
 });
